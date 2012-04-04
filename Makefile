@@ -1,12 +1,11 @@
 
-include $(GOROOT)/src/Make.inc
 
 TARG = layadd
-GOFILES = \
-	pos.go \
-	layadd.go
+all:
+	go build -o $(TARG)
 
-include $(GOROOT)/src/Make.cmd
+install:
+	cp $(TARG) $(GOROOT)/bin
 
 run: all
 	./layadd test.pos ipod4 QVGA 0.325 out.pos
